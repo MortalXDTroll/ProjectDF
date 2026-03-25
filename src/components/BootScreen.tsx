@@ -30,13 +30,11 @@ export default function BootScreen({ onComplete }: BootScreenProps) {
 
   return (
     <div
-      className="fixed inset-0 flex items-center justify-center"
-      style={{
-        background: stage === 'gradient'
-          ? 'linear-gradient(to bottom, #00072D, #0A2472, #0E6BA8)'
-          : '#A6E1FA',
-        transition: 'background 2000ms ease-in-out',
-      }}
+      className={`fixed inset-0 flex items-center justify-center transition-all duration-1000 ${
+        stage === 'gradient'
+          ? 'bg-gradient-to-b from-[#00072D] via-[#0A2472] to-[#0E6BA8]'
+          : 'bg-[#A6E1FA]'
+      }`}
     >
       <div
         className={`flex items-center gap-6 transition-all duration-700 ${

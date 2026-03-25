@@ -107,36 +107,13 @@ export default function MainMenu() {
         <h1 className="text-4xl font-bold text-[#A6E1FA] tracking-wide">OCEANIC</h1>
       </div>
 
-      <div className="relative z-10 h-full flex items-center justify-start pl-32">
-        <div
-          className="relative w-[500px] h-[500px]"
-          style={{
-            transform: 'perspective(1200px) rotateY(-15deg) rotateX(5deg)',
-            transformStyle: 'preserve-3d',
-          }}
-        >
-          <div
-            className="absolute inset-0 rounded-2xl border-2 border-[#0E6BA8] opacity-30 animate-pulse-slow"
-            style={{
-              background: 'linear-gradient(135deg, rgba(14, 107, 168, 0.1), rgba(10, 36, 114, 0.2))',
-              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), inset 0 0 30px rgba(166, 225, 250, 0.1)',
-            }}
-          />
-          <div
-            className="absolute inset-8 rounded-2xl border border-[#0E6BA8] opacity-20"
-            style={{
-              boxShadow: 'inset 0 0 20px rgba(166, 225, 250, 0.05)',
-            }}
-          />
+      <div className="relative z-10 h-full flex items-center justify-center">
+        <div className="relative w-[500px] h-[500px]">
+          <div className="absolute inset-0 rounded-full border-2 border-[#0E6BA8] opacity-30 animate-pulse-slow" />
+          <div className="absolute inset-8 rounded-full border border-[#0E6BA8] opacity-20" />
 
           <div className="absolute inset-0 flex items-center justify-center">
-            <div
-              className="w-32 h-32 rounded-full bg-gradient-to-br from-[#0E6BA8] to-[#0A2472] flex items-center justify-center border-4 border-[#A6E1FA] hover:scale-110 transition-transform duration-300 cursor-pointer"
-              style={{
-                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(166, 225, 250, 0.3)',
-                transform: 'translateZ(30px)',
-              }}
-            >
+            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#0E6BA8] to-[#0A2472] shadow-2xl flex items-center justify-center border-4 border-[#A6E1FA] hover:scale-110 transition-transform duration-300 cursor-pointer">
               <span className="text-[#A6E1FA] text-xl font-semibold">MENU</span>
             </div>
           </div>
@@ -152,18 +129,17 @@ export default function MainMenu() {
                 key={index}
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                 style={{
-                  transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) translateZ(20px)`,
+                  transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
                 }}
               >
                 <div
                   className="group w-24 h-24 rounded-full bg-gradient-to-br from-[#0A2472] to-[#001C55]
-                  flex flex-col items-center justify-center gap-1
+                  shadow-lg flex flex-col items-center justify-center gap-1
                   border-2 border-[#0E6BA8] hover:border-[#A6E1FA]
                   hover:scale-110 transition-all duration-300 cursor-pointer
                   animate-float"
                   style={{
                     animationDelay: `${index * 0.2}s`,
-                    boxShadow: '0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(14, 107, 168, 0.2)',
                   }}
                 >
                   <item.icon
