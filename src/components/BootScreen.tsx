@@ -30,11 +30,12 @@ export default function BootScreen({ onComplete }: BootScreenProps) {
 
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center transition-all duration-1000 ${
-        stage === 'gradient'
-          ? 'bg-gradient-to-b from-[#00072D] via-[#0A2472] to-[#0E6BA8]'
-          : 'bg-[#A6E1FA]'
-      }`}
+      className="fixed inset-0 flex items-center justify-center transition-all duration-[2000ms] ease-in-out"
+      style={{
+        background: stage === 'gradient'
+          ? 'linear-gradient(to bottom, #00072D, #0A2472, #0E6BA8)'
+          : '#A6E1FA'
+      }}
     >
       <div
         className={`flex items-center gap-6 transition-all duration-700 ${
@@ -42,23 +43,25 @@ export default function BootScreen({ onComplete }: BootScreenProps) {
         }`}
       >
         <div
-          className={`transition-all duration-700 ${
-            stage === 'gradient' ? 'text-[#A6E1FA]' : 'text-[#00072D]'
-          }`}
+          className="transition-all duration-[2000ms] ease-in-out animate-float"
+          style={{
+            color: stage === 'gradient' ? '#A6E1FA' : '#00072D'
+          }}
         >
           <Anchor
             size={80}
             strokeWidth={1.5}
-            className="animate-float"
           />
         </div>
 
         <h1
           className={`font-bold text-5xl transition-all duration-700 overflow-hidden ${
             stage === 'initial' ? 'max-w-0 opacity-0' : 'max-w-xl opacity-100'
-          } ${
-            stage === 'gradient' ? 'text-[#A6E1FA]' : 'text-[#00072D]'
           }`}
+          style={{
+            color: stage === 'gradient' ? '#A6E1FA' : '#00072D',
+            transition: 'color 2000ms ease-in-out, max-width 700ms, opacity 700ms'
+          }}
         >
           OCEANIC
         </h1>

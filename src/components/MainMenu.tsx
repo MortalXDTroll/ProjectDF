@@ -107,53 +107,80 @@ export default function MainMenu() {
         <h1 className="text-4xl font-bold text-[#A6E1FA] tracking-wide">OCEANIC</h1>
       </div>
 
-      <div className="relative z-10 h-full flex items-center justify-center">
-        <div className="relative w-[500px] h-[500px]">
-          <div className="absolute inset-0 rounded-full border-2 border-[#0E6BA8] opacity-30 animate-pulse-slow" />
-          <div className="absolute inset-8 rounded-full border border-[#0E6BA8] opacity-20" />
+      <div className="relative z-10 h-full flex items-center justify-start pl-32">
+        <div
+          className="relative w-[500px] h-[500px]"
+          style={{
+            perspective: '1200px',
+            transformStyle: 'preserve-3d',
+          }}
+        >
+          <div
+            className="relative w-full h-full"
+            style={{
+              transform: 'rotateY(-15deg) rotateX(-5deg)',
+              transformStyle: 'preserve-3d',
+            }}
+          >
+            <div
+              className="absolute inset-0 rounded-full border-2 border-[#0E6BA8] opacity-30 animate-pulse-slow"
+              style={{ transform: 'translateZ(-20px)' }}
+            />
+            <div
+              className="absolute inset-8 rounded-full border border-[#0E6BA8] opacity-20"
+              style={{ transform: 'translateZ(-10px)' }}
+            />
 
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#0E6BA8] to-[#0A2472] shadow-2xl flex items-center justify-center border-4 border-[#A6E1FA] hover:scale-110 transition-transform duration-300 cursor-pointer">
-              <span className="text-[#A6E1FA] text-xl font-semibold">MENU</span>
-            </div>
-          </div>
-
-          {menuItems.map((item, index) => {
-            const radius = 180;
-            const angleRad = (item.angle * Math.PI) / 180;
-            const x = Math.cos(angleRad - Math.PI / 2) * radius;
-            const y = Math.sin(angleRad - Math.PI / 2) * radius;
-
-            return (
+            <div className="absolute inset-0 flex items-center justify-center">
               <div
-                key={index}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                className="w-32 h-32 rounded-full bg-gradient-to-br from-[#0E6BA8] to-[#0A2472] flex items-center justify-center border-4 border-[#A6E1FA] hover:scale-110 transition-transform duration-300 cursor-pointer"
                 style={{
-                  transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
+                  transform: 'translateZ(40px)',
+                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(166, 225, 250, 0.3)',
                 }}
               >
+                <span className="text-[#A6E1FA] text-xl font-semibold">MENU</span>
+              </div>
+            </div>
+
+            {menuItems.map((item, index) => {
+              const radius = 180;
+              const angleRad = (item.angle * Math.PI) / 180;
+              const x = Math.cos(angleRad - Math.PI / 2) * radius;
+              const y = Math.sin(angleRad - Math.PI / 2) * radius;
+
+              return (
                 <div
-                  className="group w-24 h-24 rounded-full bg-gradient-to-br from-[#0A2472] to-[#001C55]
-                  shadow-lg flex flex-col items-center justify-center gap-1
-                  border-2 border-[#0E6BA8] hover:border-[#A6E1FA]
-                  hover:scale-110 transition-all duration-300 cursor-pointer
-                  animate-float"
+                  key={index}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                   style={{
-                    animationDelay: `${index * 0.2}s`,
+                    transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) translateZ(${20 + index * 3}px)`,
                   }}
                 >
-                  <item.icon
-                    size={28}
-                    className="text-[#A6E1FA] group-hover:text-white transition-colors"
-                    strokeWidth={1.5}
-                  />
-                  <span className="text-[#A6E1FA] text-xs font-medium group-hover:text-white transition-colors">
-                    {item.label}
-                  </span>
+                  <div
+                    className="group w-24 h-24 rounded-full bg-gradient-to-br from-[#0A2472] to-[#001C55]
+                    flex flex-col items-center justify-center gap-1
+                    border-2 border-[#0E6BA8] hover:border-[#A6E1FA]
+                    hover:scale-110 transition-all duration-300 cursor-pointer
+                    animate-float"
+                    style={{
+                      animationDelay: `${index * 0.2}s`,
+                      boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.6), 0 0 20px rgba(14, 107, 168, 0.4)',
+                    }}
+                  >
+                    <item.icon
+                      size={28}
+                      className="text-[#A6E1FA] group-hover:text-white transition-colors"
+                      strokeWidth={1.5}
+                    />
+                    <span className="text-[#A6E1FA] text-xs font-medium group-hover:text-white transition-colors">
+                      {item.label}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
 
