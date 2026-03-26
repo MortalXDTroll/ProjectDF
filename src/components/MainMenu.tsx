@@ -107,9 +107,9 @@ export default function MainMenu() {
         <h1 className="text-4xl font-bold text-[#A6E1FA] tracking-wide">OCEANIC</h1>
       </div>
 
-      <div className="relative z-10 h-full flex items-center justify-start pl-32">
+      <div className="relative z-10 h-full flex items-center justify-start pl-32 pointer-events-none">
         <div
-          className="relative w-[500px] h-[500px]"
+          className="relative w-[500px] h-[500px] pointer-events-auto"
           style={{
             perspective: '1200px',
             transformStyle: 'preserve-3d',
@@ -118,7 +118,7 @@ export default function MainMenu() {
           <div
             className="relative w-full h-full"
             style={{
-              transform: 'rotateY(-15deg) rotateX(-5deg)',
+              transform: 'rotateY(15deg) rotateX(5deg)',
               transformStyle: 'preserve-3d',
             }}
           >
@@ -133,7 +133,7 @@ export default function MainMenu() {
 
             <div className="absolute inset-0 flex items-center justify-center">
               <div
-                className="w-32 h-32 rounded-full bg-gradient-to-br from-[#0E6BA8] to-[#0A2472] flex items-center justify-center border-4 border-[#A6E1FA] hover:scale-110 transition-transform duration-300 cursor-pointer"
+                className="w-32 h-32 rounded-full bg-gradient-to-br from-[#0E6BA8] to-[#0A2472] flex items-center justify-center border-4 border-[#A6E1FA] hover:scale-110 transition-transform duration-300 cursor-pointer pointer-events-auto"
                 style={{
                   transform: 'translateZ(40px)',
                   boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(166, 225, 250, 0.3)',
@@ -162,7 +162,7 @@ export default function MainMenu() {
                     flex flex-col items-center justify-center gap-1
                     border-2 border-[#0E6BA8] hover:border-[#A6E1FA]
                     hover:scale-110 transition-all duration-300 cursor-pointer
-                    animate-float"
+                    animate-float pointer-events-auto"
                     style={{
                       animationDelay: `${index * 0.2}s`,
                       boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.6), 0 0 20px rgba(14, 107, 168, 0.4)',
